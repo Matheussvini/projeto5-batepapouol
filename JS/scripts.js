@@ -31,7 +31,9 @@ function quandoErroEnvioNome(erro){
 };
 
 function manterConcexao(){
-    const manter = axios.post('https://mock-api.driven.com.br/api/v6/uol/status');
+    const manter = axios.post('https://mock-api.driven.com.br/api/v6/uol/status',{
+        name: username
+    });
 
     manter.then(quandoSucessoManterConcexao);
     manter.catch(quandoErroManterConexao);
@@ -56,6 +58,7 @@ function pergarDados(resposta) { // função que irá enviar a cartinha pedindo 
     const promessa = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages')
     promessa.then(dadosChegaram) // agenda a execução de uma função para quando a resposta chegar
 
+    buscarParticipantes();
 }
 pergarDados()
 
@@ -108,7 +111,7 @@ function renderizarMensagens(){
             <span>${time}</span>
             <p>
                 <strong>${from}</strong>
-                 para ${to}:
+                 para <strong>${to}</strong>:
                   ${text}
             </p>
         </li>
@@ -119,7 +122,7 @@ function renderizarMensagens(){
             <span>${time}</span>
             <p>
                 <strong>${from}</strong>
-                 reservadamente para ${to}:
+                 reservadamente para <strong>${to}</strong>:
                   ${text}
             </p>
         </li>
@@ -153,6 +156,33 @@ function deuErroEnvioMensagem(erro){
     console.log(erro);
     console.log(erro.response);
     console.log(erro.response.data);
-
-
 }
+
+let participantesAtivos = [];
+
+function buscarParticipantes(resposta){
+    const participantes = axios.get('https://mock-api.driven.com.br/api/v6/uol/participants');
+
+    participantes.then(participantesChegaram);
+};
+
+function participantesChegaram(resposta) { 
+
+    participantesAtivos = resposta.data;
+        
+}
+
+
+
+const areaSair = document.querySelector('.sair-menu');
+const areaParticipantes = document.querySelector('.menu-participantes');
+
+function entrarMenu(){
+    areaSair.classList.remove('escondido');
+    areaParticipantes.classList.remove('escondido');
+};
+function sairMenu(){
+    areaSair.classList.add('escondido');
+    areaParticipantes.classList.add('escondido');
+};
+

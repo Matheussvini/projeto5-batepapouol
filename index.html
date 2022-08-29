@@ -17,7 +17,7 @@
 
     <div class="topo">
     <img src="./images/logo-chat-uol.png" alt="Logo do chat UOL">
-    <ion-icon name="people"></ion-icon>
+    <ion-icon class="entrar-menu" onclick="entrarMenu()" name="people"></ion-icon>
     </div>
 
     <div class="conteudo">
@@ -34,23 +34,29 @@
             <li>dgsadgaedvad</li>
         </ul>
         
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     </div>
     <div class="fundo">
         <input placeholder="Escreva aqui..." type="text" class="mensagem">
         <ion-icon onclick="enviarMensagens()" name="paper-plane-outline"></ion-icon>
     </div>
 
+    <div class="sair-menu escondido" onclick="sairMenu()"></div>
+    <div class="menu-participantes escondido">
+        <div class="escolher-contatos">Escolha um contato <br> para enviar mensagem:</div>
+        <ul class="contatos">
+            <li><div class="icone-nome"><ion-icon name="people"></ion-icon>Todos</div><img src="./images/Vector.png" alt="Imagem check"></li>
+            <li><div class="icone-nome"><ion-icon name="person-circle"></ion-icon>João</div></li>
+            <li><div class="icone-nome"><ion-icon name="person-circle"></ion-icon>Maria</div></li>
+        </ul>
+    
+        <div class="escolha-visibilidade">Escolha a visibilidade:</div>
+        <ul class="visibilidade">
+            <li><div class="icone-nome"><ion-icon name="lock-open"></ion-icon>Público</div><img src="./images/Vector.png" alt="Imagem check"></li>
+            <li><div class="icone-nome"><ion-icon name="lock-closed"></ion-icon>Reservadamente</div></li>
+        </ul>
+
+        
+    </div>
 
 </div>
 <script type = "module"  src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" ></script>

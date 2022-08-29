@@ -1,5 +1,5 @@
 *{
-    font-family: 'Roboto', sans-serif;    
+    font-family: 'Roboto', sans-serif;
 }
 body{
     background-color: grey;
@@ -68,8 +68,9 @@ body{
     background-color: #f3f3f3;
     height: 100%;
     width: 100%;
+    display: none;
 }
-li{
+.conteudo li{
     margin: 4px 0;
     min-height: 40px;
     border-radius: 2px;
@@ -104,5 +105,74 @@ li p{
 }
 .mensagens p strong{
     font-weight: 700;
-    
+}
+.entrar-menu{
+    cursor: pointer;
+}
+.sair-menu{
+    position: absolute;
+    z-index: 2;
+    background-color: yellow;
+    top: -80px;
+    width: 100%;
+    height: 624px;
+    background: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.menu-participantes{
+    padding: 20px;
+    width: 259px;
+    height: 624px;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 3;
+    top: -80px;
+    right: 0;
+}
+.escolher-contatos{    
+    margin: 5px 0 25px 0;    
+}
+.menu-participantes li{
+    display: flex;
+    align-items: center;
+    height: 36px;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+.escolher-contatos, .escolha-visibilidade{
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 19px;
+    color: #000000;
+}
+.escolha-visibilidade{
+    text-align: center;
+    margin: 30px 0 20px 0;
+}
+.contatos ion-icon, .visibilidade ion-icon{
+    color: #000000;
+    margin-right: 7px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.contatos ion-icon{
+    font-size: 25px;    
+}
+.visibilidade ion-icon{
+    font-size: 22px;
+}
+.icone-nome{
+    display: flex;
+    align-items: center;
+}
+
+.escondido{
+    display: none;
 }
