@@ -87,3 +87,21 @@ li{
 .reservado{
     background-color: #FFDEDE;
 }
+
+.mensagens{
+    font-family: 'Roboto', sans-serif;   
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.mensagens span{
+    color: #AAAAAA;
+    margin-right: 8px;
+}
+.mensagens p{
+    color: #000000;
+}
+.mensagens p strong{
+    font-weight: 700;
+    
+}
