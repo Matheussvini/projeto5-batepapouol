@@ -28,7 +28,6 @@ function quandoErroEnvioNome(erro){
         verificaNome();
     }
     envioNome.then(quandoSucessoEnvioNome);
-
 };
 
 function manterConcexao(){
@@ -44,11 +43,10 @@ function quandoSucessoManterConcexao(resposta){
 };
 
 function quandoErroManterConexao(erroConexao){
-    console.log(erroConexao.response);
+    //console.log(erroConexao.response);
 }
 
 setInterval(manterConcexao, 5000);
-
 
 let mensagens = [];
 
@@ -74,6 +72,8 @@ function dadosChegaram(resposta) { // função que será executada quando os dad
     mensagens = resposta.data;
     
     renderizarMensagens();
+    const conteudo = document.querySelector('.conteudo');
+    conteudo.scrollIntoView(false);
 }
 
 renderizarMensagens();
@@ -124,9 +124,35 @@ function renderizarMensagens(){
             </p>
         </li>
             `
-        }
-        const conteudo = document.querySelector('.conteudo');
-        conteudo.scrollIntoView(false);
-    }
+        };
+    };
 };
 
+
+function enviarMensagens(){
+
+    const elementoMensagem = document.querySelector('.mensagem').value;
+    console.log(elementoMensagem);
+    const novaMensagem = {
+        from: username,
+        to: "Todos",
+        text: elementoMensagem,
+        type: "message"
+    };
+    console.log(novaMensagem);
+
+    const promessa = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages');
+    promessa.then(pergarDados);
+    promessa.catch(deuErroEnvioMensagem);
+    console.log(promessa);
+
+    renderizarMensagens();
+};
+
+function deuErroEnvioMensagem(erro){
+    console.log(erro);
+    console.log(erro.response);
+    console.log(erro.response.data);
+
+
+}

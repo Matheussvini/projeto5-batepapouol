@@ -69,17 +69,18 @@ body{
     height: 100%;
     width: 100%;
 }
-.conteudo ul{
-    margin: 0 20px;
-}
 li{
     margin: 4px 0;
-    height: 40px;
+    min-height: 40px;
     border-radius: 2px;
     display: flex;
     align-items: center;
     background-color: #FFFFFF;
-    padding: 0 8.5px;    
+    padding: 8.5px;
+    box-sizing: border-box;    
+}
+li p{
+    word-break: break-all;
 }
 .status{
     background-color: #DCDCDC;
