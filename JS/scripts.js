@@ -181,6 +181,8 @@ function entrarMenu(){
     areaSair.classList.remove('escondido');
     areaParticipantes.classList.remove('escondido');
 };
+
+
 function sairMenu(){
     areaSair.classList.add('escondido');
     areaParticipantes.classList.add('escondido');
